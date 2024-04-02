@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                //obtendo dados digitados pelo usuário
+                //obtendo dados digitados pelo usuárioswdsd
                 EditText etEmail = (EditText)
         findViewById(R.id.etEmail);
                 String email = etEmail.getText().toString();
