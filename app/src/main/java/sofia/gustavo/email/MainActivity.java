@@ -22,13 +22,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
     super.onCreate(savedInstanceState);
+
     setContentView(R.layout.activity_main);
-
-    Button btnEnviar = findViewById(R.id.btnEnviar); //obtem dadlos do botao
-
+    Button btnEnviar = (Button) findViewById(R.id.btnEnviar); //obtem dadlos do botao
     //Definição da ação do click do botão
     btnEnviar.setOnClickListener(new View.OnClickListener() { //quando clicar...
-
         @Override
         public void onClick(View v) {
 
@@ -36,9 +34,11 @@ public class MainActivity extends AppCompatActivity {
             EditText etEmail = (EditText)
         findViewById(R.id.etEmail);
             String email = etEmail.getText().toString();
+
             EditText etAssunto = (EditText)
         findViewById(R.id.etAssunto);
             String assunto = etAssunto.getText().toString();
+
             EditText etText = (EditText)
         findViewById(R.id.etText);
             String texto = etText.getText().toString();
@@ -56,14 +56,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Intent.createChooser(i, "Escolha o APP"));
             }
             catch (ActivityNotFoundException e){
-                Toast.makeText(MainActivity.this, "Não há nenhum app que posso realizar essa operação", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "Não há nenhum app que posso realizar essa operação", Toast.LENGTH_LONG).show();
             }
 
-
         }
-
-
-    });
+    });}}
 
 
 
@@ -84,12 +81,3 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
-    }
-}
